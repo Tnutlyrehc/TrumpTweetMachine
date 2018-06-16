@@ -1,4 +1,6 @@
-#import numpy as np
+import os
+
+import numpy as np
 #from keras.models import Sequential
 #from keras.layers import Dense
 #from keras.layers import Dropout
@@ -55,9 +57,43 @@ with open('char_index_dictionary.pkl', "wb") as f:
     pickle.dump(index_dictionary, f)
 
 
+current_directory = os.getcwd()
+data_dir = 'char_sentences'
+
+if not os.path.exists(data_dir):
+    os.makedirs(data_dir)
+os.chdir(data_dir)
 
 
 
+max_length = 280
+min_length = 100
+tokenised_string = []
+loop_count = 0
+for c in data:
+    token = char_dictionary.get(c)
+    tokenised_string.append(token)
+
+    if c == '?' or c == '.' or c == '!' or c == ',':
+        loop_count += 1
+        file_name = 'char_%s' % str(loop_count)
+        flattened = [y for x in tokenised_string for y in x]
+        np.save(file_name, flattened)
+        if len(tokenised_string) > max_length: max_length = len(tokenised_string)
+        if len(tokenised_string) < min_length: min_length = len(tokenised_string)
+        tokenised_string = []
+
+print("min/max", max_length, min_length)
+
+file_list = os.listdir(os.getcwd())
+print(file_list)
+count = 0
+for f in file_list:
+    count += 1
+    if count > 10: break
+    test = np.load(f)
+    print(test)
+    print("******")
 
 
 
