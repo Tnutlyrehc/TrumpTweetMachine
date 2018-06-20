@@ -4,13 +4,17 @@ from datetime import datetime
 
 import pickle
 import operator
+import timeit
+from datetime import datetime
 import sys
 import random
 
-import TensorFlow as tf
 import theano as theano
-import teano.tensor as T
+import theano.tensor as T
 from theano.gradient import grad_clip
+
+import TensorFlow as tf
+
 
 unique_words = 4586 +1
 rng = np.random.RandomState(42)
@@ -65,12 +69,17 @@ def randomize_data():
 index_dictionary = pickle.load(open('index_dictionary.pkl', "rb"))
 word_dictionary = pickle.load(open('word_dictionary.pkl', "rb"))
 
-def words_to_index(w):
+def words_to_index(i):
     z = index_dictionary.get(w)
     if z is None: return -1
     else: return z[0]
 
-v_index_to_word = np.vectorize(index_to_words)
+def index_to_word(w):
+    z = index_dictionary.get(w)
+    if z is None: return -1
+    else: return  z[0]
+
+v_index_to_word = np.vectorize(index_to_word)
 v_word_to_index = np.vectorize(words_to_index)
 
 random_loss= np.log(unique_words) * length_text
@@ -81,9 +90,23 @@ print("Loss for random prediction: %f" % (random_loss))
 
 class GRU:
 
-    def __init__(self, n_words = unique_words, n_hidden = n_hidden, bptt_turncate = n_bptt_truncate):
+    def __init__(self, n_words=unique_words, n_hidden=n_hidden, bptt_truncate=n_bptt_truncate):
 
     self.n_words = n_words
+    self.n_hidden = n_hidden
+    self.bptt_truncate = bptt_truncate
+    n_gates = 3
+    n_layers = 1
+
+
+
+
+
+
+
+
+
+
 
 
 
