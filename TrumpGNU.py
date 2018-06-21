@@ -88,15 +88,15 @@ print("Loss for random prediction: %f" % (random_loss))
 
 
 
-class GRU:
+#class GRU:
 
-    def __init__(self, n_words=unique_words, n_hidden=n_hidden, bptt_truncate=n_bptt_truncate):
+ #   def __init__(self, n_words=unique_words, n_hidden=n_hidden, bptt_truncate=n_bptt_truncate):
 
-    self.n_words = n_words
-    self.n_hidden = n_hidden
-    self.bptt_truncate = bptt_truncate
-    n_gates = 3
-    n_layers = 1
+  #  self.n_words = n_words
+   # self.n_hidden = n_hidden
+    #self.bptt_truncate = bptt_truncate
+    #n_gates = 3
+    #n_layers = 1
 
 
 

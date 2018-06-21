@@ -115,7 +115,7 @@ was, 25
 head, 2
 mob., 1
 about, 5
-comey, 4
+comey, 5
 crooked, 2
 hillary, 2
 others, 4
@@ -164,7 +164,8 @@ barack, 1
 obama, 3
 this, 17
 guy, 1
-(comey)”, 1
+(comey), 2
+”, 3
 asks, 1
 highest, 3
 rated, 1
@@ -347,7 +348,6 @@ sound, 1
 real,, 1
 illegally, 1
 leak, 1
-(comey), 1
 classified, 1
 information, 1
 so, 17
@@ -603,7 +603,6 @@ shout, 1
 out,, 1
 “you, 1
 shouldn’t, 1
-”, 1
 taken, 1
 step, 2
 catastrophe, 1
@@ -1091,7 +1090,6 @@ saying,, 1
 you,, 1
 mr., 1
 president,, 2
-comey”, 1
 justice, 3
 department, 2
 awan, 1

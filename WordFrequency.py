@@ -16,7 +16,7 @@ data = data.replace('\n', ' ')
 data = data.replace('#', ' ')
 data = data.replace('@', ' ')
 data = data.replace('!', ' ')
-data = data.replace('?', '')
+data = data.replace('?', ' ')
 
 file.close()
 
